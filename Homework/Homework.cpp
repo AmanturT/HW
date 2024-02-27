@@ -4,6 +4,6 @@
 #include "Helpers.h"
 int main()
 {
-    std::cout << result();
+    std::cout << result(2,5);
 }
 
