@@ -1,5 +1,2 @@
 ﻿  Homework.cpp
-C:\Users\User\Documents\C++ Projects\Homework\Homework\Helpers.h(5,12): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'Homework.cpp')
-  
   Homework.vcxproj -> C:\Users\User\Documents\C++ Projects\Homework\x64\Debug\Homework.exe
