@@ -1,2 +1,3 @@
 ﻿  Homework.cpp
+C:\Users\User\Documents\C++ Projects\Homework\Homework\Homework.cpp(23,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Homework.vcxproj -> C:\Users\User\Documents\C++ Projects\Homework\x64\Debug\Homework.exe

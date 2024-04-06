@@ -1,34 +1,47 @@
 
 
+
+
 #include <iostream>
+#include <time.h>
+#include <cmath>
 
-void FindOddNumbers(int Limit, bool IsOdd)
-{
-    if (IsOdd == true) {
-        for (int i = 0; i <= Limit; i += 2)
-        {
-            std::cout << i << std::endl;
-        }
-    }
-    else
-    {
-        for (int i = 2; i <= Limit; i += 2)
-        {
-            std::cout << i - 1 << std::endl;
-        }
-    }
+
+
+
+
+const int n = 3;
+
+int arr[n][n] = {};
+
+
+void second() {
+	struct tm buf;
+	time_t t = time(NULL);
+	localtime_s(&buf, &t);
+	int day = buf.tm_mday;
+	int remainder = ceil(day / n);
+	for (int j = 0; j < n; j++)
+	{
+		std::cout << arr[remainder][j];
+	
+	}
 }
-
 
 int main()
 {
-    /*int number = 17; Первый пункт
-
-    for(int i = 0; i <= number; i += 2)
-    {    
-        std::cout << i;
-    } 
-   */
-  
-    FindOddNumbers(27, false);
+	
+	
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = i + j;
+			
+		}
+		
+	
+	}
+	second();
+	
 }
