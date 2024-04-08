@@ -14,7 +14,7 @@ const int n = 3;
 
 int arr[n][n] = {};
 
-
+int total = 0;
 void second() {
 	struct tm buf;
 	time_t t = time(NULL);
@@ -23,9 +23,10 @@ void second() {
 	int remainder = ceil(day / n);
 	for (int j = 0; j < n; j++)
 	{
-		std::cout << arr[remainder][j];
-	
+		total = total + arr[remainder][j];
+	    
 	}
+	std::cout << total;
 }
 
 int main()
