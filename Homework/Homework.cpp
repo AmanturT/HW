@@ -3,46 +3,28 @@
 
 
 #include <iostream>
-#include <time.h>
-#include <cmath>
+#include <vector>
 
-
-
-
-
-const int n = 3;
-
-int arr[n][n] = {};
-
-int total = 0;
-void second() {
-	struct tm buf;
-	time_t t = time(NULL);
-	localtime_s(&buf, &t);
-	int day = buf.tm_mday;
-	int remainder = ceil(day / n);
-	for (int j = 0; j < n; j++)
-	{
-		total = total + arr[remainder][j];
-	    
+class Vector {
+public:
+	std::vector <double> vect = { x,y,z };
+	int ShowSize() {
+		return vect.size();
 	}
-	std::cout << total;
-}
+private:
+	double x = 0;
+	double y = 0;
+	double z = 0;
+};
+
+
+
+
+
 
 int main()
 {
-	
-	
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			arr[i][j] = i + j;
-			
-		}
-		
-	
-	}
-	second();
+	Vector temp;
+	std::cout << temp.ShowSize();
 	
 }
