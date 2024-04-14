@@ -6,6 +6,7 @@
 
 class Player {
 public:
+    //GetData и SetData для удобства
     void SetData(int number, const std::string& PlayerName) {
         points = number;
         name = PlayerName;
@@ -44,7 +45,7 @@ int main() {
     for (int i = 0; i < quantity; i++)
     {
         for (int j = i + 1; j < quantity; j++) {
-            if (PlayersList[i].points > PlayersList[j].points)
+            if (PlayersList[i].points < PlayersList[j].points)
             {
                 auto temp = PlayersList[i];
                 PlayersList[i] = PlayersList[j];
