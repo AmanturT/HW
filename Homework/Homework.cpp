@@ -1,38 +1,66 @@
 
-
-
-
 #include <iostream>
-#include <cmath>
+#include <string>
 
-class Vector {
+
+
+class Player {
 public:
-	Vector() : x(0), y(0), z(0)
-	{}
-	Vector(double _x,double _y,double _z) : x(_x),y(_y),z(_z)
-	{}
-	void ShowData()
-	{
-		std::cout << x << ' ' << y << ' ' << z;
-	}
-	int getModule()
-	{
-		return sqrt(pow(x,2)+ pow(y, 2)+ pow(z, 2));
-	}
-private:
-	double x = 0;
-	double y = 0;
-	double z = 0;
+    void SetData(int number, const std::string& PlayerName) {
+        points = number;
+        name = PlayerName;
+    }
+
+    void GetData() const {
+        std::cout << name << ": " << points << std::endl;
+    }
+
+
+    int points = 0;
+    std::string name;
 };
 
+int main() {
+    int quantity;
+
+    std::cout << "¬ведите количество игроков: ";
+    std::cin >> quantity;
+
+
+    Player* PlayersList = new Player[quantity];
+
+    for (int i = 0; i < quantity; i++) {
+        std::string name;
+        int points;
+
+        std::cout << "¬ведите данные игрока " << i + 1 << "  (очки им€): ";
+        std::cin >> points >> name;
+
+
+        PlayersList[i].SetData(points, name);
+    }
+
+
+    for (int i = 0; i < quantity; i++)
+    {
+        for (int j = i + 1; j < quantity; j++) {
+            if (PlayersList[i].points > PlayersList[j].points)
+            {
+                auto temp = PlayersList[i];
+                PlayersList[i] = PlayersList[j];
+                PlayersList[j] = temp;
+
+            }
+        }
+    }
 
 
 
-
-
-int main()
-{
-	Vector vec(10,10,10);
-	vec.ShowData();
-	std::cout << vec.getModule();
+    for (int i = 0; i < quantity; i++)
+    {
+        PlayersList[i].GetData();
+    }
+ 
 }
+
+
