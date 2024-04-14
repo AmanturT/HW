@@ -61,7 +61,7 @@ int main() {
     {
         PlayersList[i].GetData();
     }
- 
+    delete[] PlayersList;
 }
 
 
