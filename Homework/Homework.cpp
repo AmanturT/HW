@@ -3,65 +3,55 @@
 #include <string>
 
 
-
-class Player {
+class Animal
+{
 public:
-    //GetData и SetData дл€ удобства
-    void SetData(int number, const std::string& PlayerName) {
-        points = number;
-        name = PlayerName;
-    }
+	
+	virtual void Voice()
+	{
+		std::cout << "";
+	}
 
-    void GetData() const {
-        std::cout << name << ": " << points << std::endl;
-    }
-
-
-    int points = 0;
-    std::string name;
 };
 
+class Dog : public Animal
+{
+public:
+	void Voice() override
+	{
+		std::cout << "Woof";
+	}
+};
+class Cat : public Animal
+{
+public:
+	void Voice() override
+	{
+		std::cout << "Meow";
+	}
+};
+class Sheep : public Animal
+{
+public:
+	void Voice() override
+	{
+		std::cout << "Beeee";
+	}
+};
 int main() {
-    int quantity;
 
-    std::cout << "¬ведите количество игроков: ";
-    std::cin >> quantity;
-
-
-    Player* PlayersList = new Player[quantity];
-
-    for (int i = 0; i < quantity; i++) {
-        std::string name;
-        int points;
-
-        std::cout << "¬ведите данные игрока " << i + 1 << "  (очки им€): ";
-        std::cin >> points >> name;
-
-
-        PlayersList[i].SetData(points, name);
-    }
-
-
-    for (int i = 0; i < quantity; i++)
-    {
-        for (int j = i + 1; j < quantity; j++) {
-            if (PlayersList[i].points < PlayersList[j].points)
-            {
-                auto temp = PlayersList[i];
-                PlayersList[i] = PlayersList[j];
-                PlayersList[j] = temp;
-
-            }
-        }
-    }
-
-
-
-    for (int i = 0; i < quantity; i++)
-    {
-        PlayersList[i].GetData();
-    }
-    delete[] PlayersList;
+	
+	const int size = 3;
+	Animal* arr[size];
+	arr[0] = new Dog();
+	arr[1] = new Cat();
+	arr[2] = new Sheep();
+	for (int i = 0; i < sizeof(arr) / sizeof(Animal); i++)
+	{
+		arr[i]->Voice();
+		
+	}
+	
 }
 
 
